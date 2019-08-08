@@ -1154,7 +1154,76 @@
         INNER JOIN MONEDA f ON a.codMonedaRelacion = f.codMoneda
         WHERE a.codCotizacion = '$var01'
 
-        ORDER BY a.nomCotizacionTipo";
+        ORDER BY c.nomEmpresa, b.nomSucursal, d.nomCiudad";
+
+        if ($query = $str_conn->query($str_qry)) {
+            while($row00 = $query->fetch_assoc()) {
+                if ($row00['estado_codigo'] == 'A'){
+                    $estado = 'ACTIVO';
+                } else {
+                    $estado = 'INACTIVO';
+                }
+
+                $result[]  = array(
+                    "moneda_relacionada_codigo" => $row00['moneda_relacionada_codigo'],
+                    "moneda_relacionada_nombre" => $row00['moneda_relacionada_nombre'],
+                    "moneda_relacionada_bcp"    => $row00['moneda_relacionada_bcp'],
+                    "moneda_relacionada_path"   => $row00['moneda_relacionada_path'],
+                    "moneda_base_codigo"        => $row00['moneda_base_codigo'],
+                    "moneda_base_nombre"        => $row00['moneda_base_nombre'],
+                    "moneda_base_bcp"           => $row00['moneda_base_bcp'],
+                    "moneda_base_path"          => $row00['moneda_base_path'],
+                    "ciudad_codigo"             => $row00['ciudad_codigo'],
+                    "ciudad_nombre"             => $row00['ciudad_nombre'],
+                    "empresa_codigo"            => $row00['empresa_codigo'],
+                    "empresa_nombre"            => $row00['empresa_nombre'],
+                    "empresa_url"               => $row00['empresa_url'],
+                    "sucursal_codigo"           => $row00['sucursal_codigo'],
+                    "sucursal_nombre"           => $row00['sucursal_nombre'],
+                    "cotizacion_codigo"         => $row00['cotizacion_codigo'],
+                    "estado_codigo"             => $row00['estado_codigo'],
+                    "estado_nombre"             => $estado
+                );
+            }
+
+            $query->free();
+        }        
+
+        $str_conn->close();
+
+        return $result;
+    }
+
+    function getCotizacionId2($var01, $var02, $var03){
+        $str_conn       = getConexion();
+        $str_qry        = "SELECT
+        f.codMoneda         AS      moneda_relacionada_codigo,
+        f.nomMoneda         AS      moneda_relacionada_nombre,
+        f.bcpMoneda         AS      moneda_relacionada_bcp,
+        f.patMoneda         AS      moneda_relacionada_path,
+        e.codMoneda         AS      moneda_base_codigo,
+        e.nomMoneda         AS      moneda_base_nombre,
+        e.bcpMoneda         AS      moneda_base_bcp,
+        e.patMoneda         AS      moneda_base_path,
+        d.codCiudad         AS      ciudad_codigo,
+        d.nomCiudad         AS      ciudad_nombre,
+        c.codEmpresa        AS      empresa_codigo,
+        c.nomEmpresa        AS      empresa_nombre,
+        c.urlEmpresa        AS      empresa_url,
+        b.codSucursal       AS      sucursal_codigo,
+        b.nomSucursal       AS      sucursal_nombre,
+        a.codEstado         AS      estado_codigo,
+        a.codCotizacion     AS      cotizacion_codigo
+
+        FROM COTIZACION a
+        INNER JOIN SUCURSAL b ON a.codSucursal = b.codSucursal
+        INNER JOIN EMPRESA c ON b.codEmpresa = c.codEmpresa
+        INNER JOIN CIUDAD d ON b.codCiudad = d.codCiudad
+        INNER JOIN MONEDA e ON a.codMonedaBase = e.codMoneda
+        INNER JOIN MONEDA f ON a.codMonedaRelacion = f.codMoneda
+        WHERE a.codSucursal = '$var01' AND a.codMonedaBase = '$var02' AND a.codMonedaRelacion = '$var03'
+
+        ORDER BY c.nomEmpresa, b.nomSucursal, d.nomCiudad";
 
         if ($query = $str_conn->query($str_qry)) {
             while($row00 = $query->fetch_assoc()) {

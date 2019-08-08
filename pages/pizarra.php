@@ -29,26 +29,21 @@
                                         <table id="exTable" class="table table-striped" border="1">
                                             <thead>
                                                 <tr valign="middle">
-                                                    <th style="text-align:center; font-size:1.25em;" colspan="2"> USD / PYG </th>
-                                                    <th style="text-align:center; font-size:1.25em;" colspan="2"> BRL / PYG </th>
-                                                    <th style="text-align:center; font-size:1.25em;" colspan="2"> ARS / PYG </th>
-                                                    <th style="text-align:center; font-size:1.25em;" colspan="2"> EUR / PYG </th>
-                                                    <th style="text-align:center; font-size:1.25em;" colspan="2"> USD / BRL </th>
-                                                    <th style="text-align:center; font-size:1.25em;" colspan="2"> USD / ARS </th>
+                                                    <th style="text-align:center; font-size:2em; background-color:rgba(27, 207, 180, 0.2);" colspan="2"> USD / BRL </th>
+
+                                                    <th style="text-align:center; font-size:2em; background-color:rgba(25, 138, 227, 0.2);" colspan="2"> USD / ARS </th>
+
+                                                    <th style="text-align:center; font-size:2em; background-color:rgba(254, 124, 150, 0.2);" colspan="2"> USD / PYG </th>
                                                 </tr>
                                                 <tr valign="middle">
-                                                    <th style="text-align:center; font-size:1.25em;"> COMPRA </th>
-                                                    <th style="text-align:center; font-size:1.25em;"> VENTA </th>
-                                                    <th style="text-align:center; font-size:1.25em;"> COMPRA </th>
-                                                    <th style="text-align:center; font-size:1.25em;"> VENTA </th>
-                                                    <th style="text-align:center; font-size:1.25em;"> COMPRA </th>
-                                                    <th style="text-align:center; font-size:1.25em;"> VENTA </th>
-                                                    <th style="text-align:center; font-size:1.25em;"> COMPRA </th>
-                                                    <th style="text-align:center; font-size:1.25em;"> VENTA </th>
-                                                    <th style="text-align:center; font-size:1.25em;"> COMPRA </th>
-                                                    <th style="text-align:center; font-size:1.25em;"> VENTA </th>
-                                                    <th style="text-align:center; font-size:1.25em;"> COMPRA </th>
-                                                    <th style="text-align:center; font-size:1.25em;"> VENTA </th>
+                                                    <th style="text-align:center; font-size:2em; background-color:rgba(27, 207, 180, 0.2);"> COMPRA </th>
+                                                    <th style="text-align:center; font-size:2em; background-color:rgba(27, 207, 180, 0.2);"> VENTA </th>
+
+                                                    <th style="text-align:center; font-size:2em; background-color:rgba(25, 138, 227, 0.2);"> COMPRA </th>
+                                                    <th style="text-align:center; font-size:2em; background-color:rgba(25, 138, 227, 0.2);"> VENTA </th>
+
+                                                    <th style="text-align:center; font-size:2em; background-color:rgba(254, 124, 150, 0.2);"> COMPRA </th>
+                                                    <th style="text-align:center; font-size:2em; background-color:rgba(254, 124, 150, 0.2);"> VENTA </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -59,29 +54,17 @@
     foreach($result as $data) {
 ?>
                                                 <tr>
-                                                    <td style="text-align:center; font-size:1.5em;" colspan="14">   <?php echo $data['empresa_nombre'].' - '.$data['sucursal_nombre'].' - '.$data['ciudad_nombre']; ?> </td>
+                                                    <td style="text-align:center; font-size:2em; background-color: #15A346; color:#ffffff; font-weight: bold;" colspan="6">   <?php echo $data['empresa_nombre'].' - '.$data['sucursal_nombre'].' - '.$data['ciudad_nombre'].' ('.$data['cotizacion_detalle_fecha_pizarra_usd_brl'].')'; ?> </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align:right; font-size:1.90em;">   <?php echo number_format($data['cotizacion_detalle_compra_usd_pyg'], 2, ',', '.'); ?> </td>
-                                                    <td style="text-align:right; font-size:1.90em;">   <?php echo number_format($data['cotizacion_detalle_venta_usd_pyg'], 2, ',', '.'); ?> </td>
-                                                    <td style="text-align:right; font-size:1.90em;">   <?php echo number_format($data['cotizacion_detalle_compra_brl_pyg'], 2, ',', '.'); ?> </td>
-                                                    <td style="text-align:right; font-size:1.90em;">   <?php echo number_format($data['cotizacion_detalle_venta_brl_pyg'], 2, ',', '.'); ?> </td>
-                                                    <td style="text-align:right; font-size:1.90em;">   <?php echo number_format($data['cotizacion_detalle_compra_ars_pyg'], 2, ',', '.'); ?> </td>
-                                                    <td style="text-align:right; font-size:1.90em;">   <?php echo number_format($data['cotizacion_detalle_venta_ars_pyg'], 2, ',', '.'); ?> </td>
-                                                    <td style="text-align:right; font-size:1.90em;">   <?php echo number_format($data['cotizacion_detalle_compra_eur_pyg'], 2, ',', '.'); ?> </td>
-                                                    <td style="text-align:right; font-size:1.90em;">   <?php echo number_format($data['cotizacion_detalle_venta_eur_pyg'], 2, ',', '.'); ?> </td>
-                                                    <td style="text-align:right; font-size:1.90em;">   <?php echo number_format($data['cotizacion_detalle_compra_usd_brl'], 2, ',', '.'); ?> </td>
-                                                    <td style="text-align:right; font-size:1.90em;">   <?php echo number_format($data['cotizacion_detalle_venta_usd_brl'], 3, ',', '.'); ?> </td>
-                                                    <td style="text-align:right; font-size:1.90em;">   <?php echo number_format($data['cotizacion_detalle_compra_usd_ars'], 3, ',', '.'); ?> </td>
-                                                    <td style="text-align:right; font-size:1.90em;">   <?php echo number_format($data['cotizacion_detalle_venta_usd_ars'], 3, ',', '.'); ?> </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align:center; font-size:1.25em;" colspan="2">   <?php echo $data['cotizacion_detalle_fecha_pizarra_usd_pyg']; ?> </td>
-                                                    <td style="text-align:center; font-size:1.25em;" colspan="2">   <?php echo $data['cotizacion_detalle_fecha_pizarra_brl_pyg']; ?> </td>
-                                                    <td style="text-align:center; font-size:1.25em;" colspan="2">   <?php echo $data['cotizacion_detalle_fecha_pizarra_ars_pyg']; ?> </td>
-                                                    <td style="text-align:center; font-size:1.25em;" colspan="2">   <?php echo $data['cotizacion_detalle_fecha_pizarra_eur_pyg']; ?> </td>
-                                                    <td style="text-align:center; font-size:1.25em;" colspan="2">   <?php echo $data['cotizacion_detalle_fecha_pizarra_usd_brl']; ?> </td>
-                                                    <td style="text-align:center; font-size:1.25em;" colspan="2">   <?php echo $data['cotizacion_detalle_fecha_pizarra_usd_ars']; ?> </td>
+                                                    <td style="text-align:right; font-size:2.5em; background-color:rgba(27, 207, 180, 0.2); font-weight: bold;">   <?php echo number_format($data['cotizacion_detalle_compra_usd_brl'], 2, ',', '.'); ?> </td>
+                                                    <td style="text-align:right; font-size:2.5em; background-color:rgba(27, 207, 180, 0.2); font-weight: bold;">   <?php echo number_format($data['cotizacion_detalle_venta_usd_brl'], 3, ',', '.'); ?> </td>
+
+                                                    <td style="text-align:right; font-size:2.5em; background-color:rgba(25, 138, 227, 0.2); font-weight: bold;">   <?php echo number_format($data['cotizacion_detalle_compra_usd_ars'], 3, ',', '.'); ?> </td>
+                                                    <td style="text-align:right; font-size:2.5em; background-color:rgba(25, 138, 227, 0.2); font-weight: bold;">   <?php echo number_format($data['cotizacion_detalle_venta_usd_ars'], 3, ',', '.'); ?> </td>
+
+                                                    <td style="text-align:right; font-size:2.5em; background-color:rgba(254, 124, 150, 0.2); font-weight: bold;">   <?php echo number_format($data['cotizacion_detalle_compra_usd_pyg'], 2, ',', '.'); ?> </td>
+                                                    <td style="text-align:right; font-size:2.5em; background-color:rgba(254, 124, 150, 0.2); font-weight: bold;">   <?php echo number_format($data['cotizacion_detalle_venta_usd_pyg'], 2, ',', '.'); ?> </td>
                                                 </tr>
 <?php
 
