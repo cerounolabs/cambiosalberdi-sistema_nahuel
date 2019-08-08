@@ -8,17 +8,77 @@
         $var02  = 'A';
         $var03  = $_GET['var03'];
         $var04  = 1;
-        $var05  = $_GET['var05'];
-        $var06  = $_GET['var06'];
-        $var07  = str_replace('T', ' ', $_GET['var07']);
+        $var05  = str_replace('T', ' ', $_GET['var05']);
+        $var11  = $_GET['var11'];
+        $var12  = $_GET['var12'];
+        $var21  = $_GET['var21'];
+        $var22  = $_GET['var22'];
+        $var31  = $_GET['var31'];
+        $var32  = $_GET['var32'];
+        $var41  = $_GET['var41'];
+        $var42  = $_GET['var42'];
+        $var51  = $_GET['var51'];
+        $var52  = $_GET['var52'];
+        $var61  = $_GET['var61'];
+        $var62  = $_GET['var62'];
+        $var71  = $_GET['var71'];
+        $var72  = $_GET['var72'];
 
-        $var01  = setCotizacionDetalle($var00, $var01, $var02, $var03, $var04, $var05, $var06, $var07);
+        if ($var11 > 0 || $var12 > 0) {
+            $data   = getCotizacionId2($var03, 2, 1);
+            $var01  = setCotizacionDetalle($var00, $var01, $var02, $data[0]['cotizacion_codigo'], $var04, $var11, $var12, $var05);
+        }
+/*        
+        if ($var21 > 0 || $var22 > 0) {
+            $data   = getCotizacionId2($var03, 3, 1);
+            $var01  = setCotizacionDetalle($var00, $var01, $var02, $data[0]['cotizacion_codigo'], $var04, $var21, $var22, $var05);
+        }
+*/
+/*        
+        if ($var31 > 0 || $var32 > 0) {
+            $data   = getCotizacionId2($var03, 5, 1);
+            $var01  = setCotizacionDetalle($var00, $var01, $var02, $data[0]['cotizacion_codigo'], $var04, $var31, $var32, $var05);
+        }
+*/
+/*
+        if ($var41 > 0 || $var42 > 0) {
+            $data   = getCotizacionId2($var03, 4, 1);
+            $var01  = setCotizacionDetalle($var00, $var01, $var02, $data[0]['cotizacion_codigo'], $var04, $var41, $var42, $var05);
+        }
+*/
+        if ($var51 > 0 || $var52 > 0) {
+            $data   = getCotizacionId2($var03, 2, 3);
+            $var01  = setCotizacionDetalle($var00, $var01, $var02, $data[0]['cotizacion_codigo'], $var04, $var51, $var52, $var05);
+        }
+
+        if ($var61 > 0 || $var62 > 0) {
+            $data   = getCotizacionId2($var03, 2, 5);
+            $var01  = setCotizacionDetalle($var00, $var01, $var02, $data[0]['cotizacion_codigo'], $var04, $var61, $var62, $var05);
+        }
+/*
+        if ($var71 > 0 || $var72 > 0) {
+            $data   = getCotizacionId2($var03, 4, 2);
+            $var01  = setCotizacionDetalle($var00, $var01, $var02, $data[0]['cotizacion_codigo'], $var04, $var71, $var72, $var05);
+        }
+*/
         $var02  = '';
         $var03  = '';
         $var04  = '';
         $var05  = '';
-        $var06  = '';
-        $var07  = '';
+        $var11  = '';
+        $var12  = '';
+        $var21  = '';
+        $var22  = '';
+        $var31  = '';
+        $var32  = '';
+        $var41  = '';
+        $var42  = '';
+        $var51  = '';
+        $var52  = '';
+        $var61  = '';
+        $var62  = '';
+        $var71  = '';
+        $var72  = '';
     }
 
     switch ($var00) {
@@ -121,16 +181,16 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-group row">
-                                                        <label class="col-12" for="var03"> EMPRESA - SUCURSAL - CIUDAD (MONEDA BASE == MONEDA RELACIONADA)</label>
+                                                        <label class="col-12" for="var03"> EMPRESA - SUCURSAL - CIUDAD</label>
                                                         <div class="col-12">
                                                             <select class="form-control" id="var03" name="var03" required <?php echo $readonly; ?>>
 <?php
-    $result = getCotizacion();
+    $result = getSucursal();
 
     foreach($result as $data) {
         if ($data['estado_codigo'] == 'A') {
 ?>
-                                                                <option value="<?php echo $data['cotizacion_codigo']; ?>"> <?php echo $data['empresa_nombre'].' - '.$data['sucursal_nombre'].' - '.$data['ciudad_nombre'].' ('.$data['moneda_base_bcp'].' == '.$data['moneda_relacionada_bcp'].')'; ?> </option>
+                                                                <option value="<?php echo $data['sucursal_codigo']; ?>"> <?php echo $data['empresa_nombre'].' - '.$data['sucursal_nombre'].' - '.$data['ciudad_nombre']; ?> </option>
 <?php
         }
     }
@@ -144,31 +204,181 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-group row">
-                                                        <label class="col-12" for="var05"> COMPRA </label>
-                                                        <div class="col-12">
-                                                            <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var05" name="var05" value="<?php echo $var05; ?>" placeholder="COMPRA" required <?php echo $readonly; ?>>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div class="form-group row">
-                                                        <label class="col-12" for="var06"> VENTA </label>
-                                                        <div class="col-12">
-                                                            <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var06" name="var06" value="<?php echo $var06; ?>" placeholder="VENTA" required <?php echo $readonly; ?>>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div class="form-group row">
                                                         <label class="col-12" for="var07"> FECHA HORA PIZARRA</label>
                                                         <div class="col-12">
-                                                            <input type="datetime-local" class="form-control" style="text-transform:uppercase;" id="var07" name="var07" value="<?php echo $var07; ?>" placeholder="FECHA HORA PIZARRA" required <?php echo $readonly; ?>>
+                                                            <input type="datetime-local" class="form-control" style="text-transform:uppercase;" id="var05" name="var05" value="<?php echo $var05; ?>" placeholder="FECHA HORA PIZARRA" required <?php echo $readonly; ?>>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+<!--
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <p class="card-description" style="color:#fe7c96;">
+                                                        EUR => USD
+                                                    </p>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var05"> COMPRA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var71" name="var71" value="<?php echo $var71; ?>" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var06"> VENTA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var72" name="var72" value="<?php echo $var72; ?>" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-3">
+                                                    <p class="card-description" style="color:#fe7c96;">
+                                                        BRL => PYG
+                                                    </p>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var05"> COMPRA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var21" name="var21" value="<?php echo $var21; ?>" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var06"> VENTA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var22" name="var22" value="<?php echo $var22; ?>" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <p class="card-description" style="color:#fe7c96;">
+                                                        ARS => PYG
+                                                    </p>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var05"> COMPRA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var31" name="var31" value="<?php echo $var31; ?>" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var06"> VENTA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var32" name="var32" value="<?php echo $var32; ?>" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <p class="card-description" style="color:#fe7c96;">
+                                                        EUR => PYG
+                                                    </p>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var05"> COMPRA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var41" name="var41" value="<?php echo $var41; ?>" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var06"> VENTA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var42" name="var42" value="<?php echo $var42; ?>" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+-->
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <p class="card-description" style="color:#fe7c96;">
+                                                        USD => BRL
+                                                    </p>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var05"> COMPRA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var51" name="var51" value="<?php echo $var51; ?>" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var06"> VENTA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var52" name="var52" value="<?php echo $var52; ?>" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-3">
+                                                    <p class="card-description" style="color:#fe7c96;">
+                                                        USD => ARS
+                                                    </p>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var05"> COMPRA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var61" name="var61" value="<?php echo $var61; ?>" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var06"> VENTA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var62" name="var62" value="<?php echo $var62; ?>" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <p class="card-description" style="color:#fe7c96;">
+                                                        USD => PYG
+                                                    </p>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var05"> COMPRA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var11" name="var11" value="<?php echo $var11; ?>" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-12" for="var06"> VENTA </label>
+                                                            <div class="col-12">
+                                                                <input type="number" step="any" class="form-control" style="text-transform:uppercase;" id="var12" name="var12" value="<?php echo $var12; ?>" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
