@@ -194,7 +194,7 @@
                                                 </div>
                                             </div>
                                             
-                                            <a type="button" class="btn btn-light" style="float:right; " href="../pages/tablerodetalle.php"> Volver </a>
+                                            <a type="button" class="btn btn-light" style="float:right; " href="../pages/tablerodetalle.php?var01=<?php echo $var03; ?>"> Volver </a>
                                             <button type="submit" class="btn btn-gradient-primary mr-2" style="float:right;" <?php echo $btnReadonly; ?>><?php echo $btnAction; ?></button>
                                         </form>
                                     </div>
