@@ -24,10 +24,10 @@
         $var71  = $_GET['var71'];
         $var72  = $_GET['var72'];
 
-        if ($var11 > 0 || $var12 > 0) {
+//        if ($var11 > 0 || $var12 > 0) {
             $data   = getCotizacionId2($var03, 2, 1);
             $var01  = setCotizacionDetalle($var00, $var01, $var02, $data[0]['cotizacion_codigo'], $var04, $var11, $var12, $var05);
-        }
+//        }
 /*        
         if ($var21 > 0 || $var22 > 0) {
             $data   = getCotizacionId2($var03, 3, 1);
@@ -46,15 +46,14 @@
             $var01  = setCotizacionDetalle($var00, $var01, $var02, $data[0]['cotizacion_codigo'], $var04, $var41, $var42, $var05);
         }
 */
-        if ($var51 > 0 || $var52 > 0) {
+//        if ($var51 > 0 || $var52 > 0) {
             $data   = getCotizacionId2($var03, 2, 3);
             $var01  = setCotizacionDetalle($var00, $var01, $var02, $data[0]['cotizacion_codigo'], $var04, $var51, $var52, $var05);
-        }
-
-        if ($var61 > 0 || $var62 > 0) {
+//        }
+//        if ($var61 > 0 || $var62 > 0) {
             $data   = getCotizacionId2($var03, 2, 5);
             $var01  = setCotizacionDetalle($var00, $var01, $var02, $data[0]['cotizacion_codigo'], $var04, $var61, $var62, $var05);
-        }
+//        }
 /*
         if ($var71 > 0 || $var72 > 0) {
             $data   = getCotizacionId2($var03, 4, 2);
