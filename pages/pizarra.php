@@ -54,7 +54,7 @@
     foreach($result as $data) {
 ?>
                                                 <tr>
-                                                    <td style="text-align:center; font-size:2em; background-color: #15A346; color:#ffffff; font-weight: bold;" colspan="6">   <?php echo $data['empresa_nombre'].' - '.$data['sucursal_nombre'].' - '.$data['ciudad_nombre'].' ('.$data['cotizacion_detalle_fecha_pizarra_usd_brl'].')'; ?> </td>
+                                                    <td style="text-align:center; font-size:2em; background-color: #15A346; color:#ffffff; font-weight: bold;" colspan="6">   <?php echo $data['empresa_nombre'].' - '.$data['sucursal_nombre'].' - '.$data['ciudad_nombre'].' ('.$data['cotizacion_detalle_fecha_pizarra_usd_pyg'].' - '.$data['cotizacion_detalle_alta_usuario_usd_pyg'].')'; ?> </td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right; font-size:2.5em; background-color:rgba(27, 207, 180, 0.2); font-weight: bold;">   <?php echo number_format($data['cotizacion_detalle_compra_usd_brl'], 2, ',', '.'); ?> </td>

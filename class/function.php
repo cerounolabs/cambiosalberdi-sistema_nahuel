@@ -160,7 +160,7 @@
 
                     if ($str_conn->query($str_qry) === TRUE) {
                         $codCot = $str_conn->insert_id;
-                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."')";
+                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."', 'SISTEMA')";
 
                         if ($str_conn->query($str_qry) === TRUE) {
 
@@ -171,7 +171,7 @@
 
                     if ($str_conn->query($str_qry) === TRUE) {
                         $codCot = $str_conn->insert_id;
-                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."')";
+                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."', 'SISTEMA')";
 
                         if ($str_conn->query($str_qry) === TRUE) {
 
@@ -182,7 +182,7 @@
 
                     if ($str_conn->query($str_qry) === TRUE) {
                         $codCot = $str_conn->insert_id;
-                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."')";
+                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."', 'SISTEMA')";
 
                         if ($str_conn->query($str_qry) === TRUE) {
 
@@ -193,7 +193,7 @@
 
                     if ($str_conn->query($str_qry) === TRUE) {
                         $codCot = $str_conn->insert_id;
-                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."')";
+                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."', 'SISTEMA')";
 
                         if ($str_conn->query($str_qry) === TRUE) {
 
@@ -204,7 +204,7 @@
 
                     if ($str_conn->query($str_qry) === TRUE) {
                         $codCot = $str_conn->insert_id;
-                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."')";
+                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."', 'SISTEMA')";
 
                         if ($str_conn->query($str_qry) === TRUE) {
 
@@ -215,7 +215,7 @@
 
                     if ($str_conn->query($str_qry) === TRUE) {
                         $codCot = $str_conn->insert_id;
-                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."')";
+                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."', 'SISTEMA')";
 
                         if ($str_conn->query($str_qry) === TRUE) {
 
@@ -226,7 +226,7 @@
 
                     if ($str_conn->query($str_qry) === TRUE) {
                         $codCot = $str_conn->insert_id;
-                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."')";
+                        $str_qry= "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('A', '$codCot', '1', '0', '0', '2019-01-01 00:00', '".$fecAlt."', '".$horAlt."', 'SISTEMA')";
 
                         if ($str_conn->query($str_qry) === TRUE) {
 
@@ -1263,7 +1263,7 @@
         return $result;
     }
 
-    function setCotizacionDetalle($var00, $var01, $var02, $var03, $var04, $var05, $var06, $var07){
+    function setCotizacionDetalle($var00, $var01, $var02, $var03, $var04, $var05, $var06, $var07, $sysUse){
         $str_conn       = getConexion();
         $var07_1        = strtotime('Y-m-d H:i', $var07);
         $var08          = date('Y-m-d');
@@ -1273,7 +1273,7 @@
             case 'CA':
                 $str_qry = "UPDATE COTIZACIONDETALLE SET codEstado = 'H' WHERE codCotizacion = '$var03' AND codCotizacionTipo = '$var04'";
                 if ($str_conn->query($str_qry) === TRUE) {
-                    $str_qry = "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta) VALUES ('".$var02."', '$var03', '$var04', '$var05', '$var06', '".$var07."', '".$var08."', '".$var09."')";
+                    $str_qry = "INSERT INTO COTIZACIONDETALLE(codEstado, codCotizacion, codCotizacionTipo, impCompra, impVenta, fecPizarra, fecAlta, horAlta, usuAlta) VALUES ('".$var02."', '$var03', '$var04', '$var05', '$var06', '".$var07."', '".$var08."', '".$var09."', '".$sysUse."')";
                     if ($str_conn->query($str_qry) === TRUE) {
                         $result = $str_conn->insert_id;
                         $result = 'Se inserto el registro de forma correcta';
@@ -1383,6 +1383,7 @@
         i7.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_eur_usd,
         i7.fecAlta              AS      cotizacion_detalle_alta_fecha_eur_usd,
         i7.horAlta              AS      cotizacion_detalle_alta_hora_eur_usd,
+        i7.usuAlta              AS      cotizacion_detalle_alta_usuario_eur_usd,
 
         h7.codMoneda            AS      moneda_relacionada_codigo_eur_usd,
         h7.nomMoneda            AS      moneda_relacionada_nombre_eur_usd,
@@ -1402,6 +1403,7 @@
         i6.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_usd_ars,
         i6.fecAlta              AS      cotizacion_detalle_alta_fecha_usd_ars,
         i6.horAlta              AS      cotizacion_detalle_alta_hora_usd_ars,
+        i6.usuAlta              AS      cotizacion_detalle_alta_usuario_usd_ars,
 
         h6.codMoneda            AS      moneda_relacionada_codigo_usd_ars,
         h6.nomMoneda            AS      moneda_relacionada_nombre_usd_ars,
@@ -1421,6 +1423,7 @@
         i5.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_usd_brl,
         i5.fecAlta              AS      cotizacion_detalle_alta_fecha_usd_brl,
         i5.horAlta              AS      cotizacion_detalle_alta_hora_usd_brl,
+        i5.usuAlta              AS      cotizacion_detalle_alta_usuario_usd_brl,
 
         h5.codMoneda            AS      moneda_relacionada_codigo_usd_brl,
         h5.nomMoneda            AS      moneda_relacionada_nombre_usd_brl,
@@ -1440,6 +1443,7 @@
         i4.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_eur_pyg,
         i4.fecAlta              AS      cotizacion_detalle_alta_fecha_eur_pyg,
         i4.horAlta              AS      cotizacion_detalle_alta_hora_eur_pyg,
+        i4.usuAlta              AS      cotizacion_detalle_alta_usuario_eur_pyg,
 
         h4.codMoneda            AS      moneda_relacionada_codigo_eur_pyg,
         h4.nomMoneda            AS      moneda_relacionada_nombre_eur_pyg,
@@ -1459,6 +1463,7 @@
         i3.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_ars_pyg,
         i3.fecAlta              AS      cotizacion_detalle_alta_fecha_ars_pyg,
         i3.horAlta              AS      cotizacion_detalle_alta_hora_ars_pyg,
+        i3.usuAlta              AS      cotizacion_detalle_alta_usuario_ars_pyg,
 
         h3.codMoneda            AS      moneda_relacionada_codigo_ars_pyg,
         h3.nomMoneda            AS      moneda_relacionada_nombre_ars_pyg,
@@ -1478,6 +1483,7 @@
         i2.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_brl_pyg,
         i2.fecAlta              AS      cotizacion_detalle_alta_fecha_brl_pyg,
         i2.horAlta              AS      cotizacion_detalle_alta_hora_brl_pyg,
+        i2.usuAlta              AS      cotizacion_detalle_alta_usuario_brl_pyg,
 
         h2.codMoneda            AS      moneda_relacionada_codigo_brl_pyg,
         h2.nomMoneda            AS      moneda_relacionada_nombre_brl_pyg,
@@ -1497,6 +1503,7 @@
         i1.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_usd_pyg,
         i1.fecAlta              AS      cotizacion_detalle_alta_fecha_usd_pyg,
         i1.horAlta              AS      cotizacion_detalle_alta_hora_usd_pyg,
+        i1.usuAlta              AS      cotizacion_detalle_alta_usuario_usd_pyg,
 
         h1.codMoneda            AS      moneda_relacionada_codigo_usd_pyg,
         h1.nomMoneda            AS      moneda_relacionada_nombre_usd_pyg,
@@ -1517,7 +1524,7 @@
         d.urlEmpresa            AS      empresa_url,
         c.codSucursal           AS      sucursal_codigo,
         c.nomSucursal           AS      sucursal_nombre,
-
+        
         b.codTableroDetalle     AS      tablero_detalle_codigo,
 
         a.codEstado             AS      estado_codigo,
@@ -1569,7 +1576,7 @@
         (i3.CodEstado = 'A' AND f3.codMonedaBase = 5 AND f3.codMonedaRelacion = 1)  AND (i4.CodEstado = 'A' AND f4.codMonedaBase = 4 AND f4.codMonedaRelacion = 1) AND (i5.CodEstado = 'A' AND f5.codMonedaBase = 2 AND f5.codMonedaRelacion = 3) 
         AND (i6.CodEstado = 'A' AND f6.codMonedaBase = 2 AND f6.codMonedaRelacion = 5) AND (i7.CodEstado = 'A' AND f7.codMonedaBase = 4 AND f7.codMonedaRelacion = 2)
 
-        ORDER BY a.nomTablero";
+        ORDER BY d.nomEmpresa, c.nomSucursal, e.nomCiudad";
 
         if ($query = $str_conn->query($str_qry)) {
             while($row00 = $query->fetch_assoc()) {
@@ -1610,6 +1617,7 @@
                     "cotizacion_detalle_fecha_pizarra_usd_pyg"  => $row00['cotizacion_detalle_fecha_pizarra_usd_pyg'],
                     "cotizacion_detalle_alta_fecha_usd_pyg"     => $row00['cotizacion_detalle_alta_fecha_usd_pyg'],
                     "cotizacion_detalle_alta_hora_usd_pyg"      => $row00['cotizacion_detalle_alta_hora_usd_pyg'],
+                    "cotizacion_detalle_alta_usuario_usd_pyg"   => $row00['cotizacion_detalle_alta_usuario_usd_pyg'],
 
                     "cotizacion_codigo_brl_pyg"                 => $row00['cotizacion_codigo_brl_pyg'],
                     "moneda_base_codigo_brl_pyg"                => $row00['moneda_base_codigo_brl_pyg'],
@@ -1626,6 +1634,7 @@
                     "cotizacion_detalle_fecha_pizarra_brl_pyg"  => $row00['cotizacion_detalle_fecha_pizarra_brl_pyg'],
                     "cotizacion_detalle_alta_fecha_brl_pyg"     => $row00['cotizacion_detalle_alta_fecha_brl_pyg'],
                     "cotizacion_detalle_alta_hora_brl_pyg"      => $row00['cotizacion_detalle_alta_hora_brl_pyg'],
+                    "cotizacion_detalle_alta_usuario_brl_pyg"   => $row00['cotizacion_detalle_alta_usuario_brl_pyg'],
 
                     "cotizacion_codigo_ars_pyg"                 => $row00['cotizacion_codigo_ars_pyg'],
                     "moneda_base_codigo_ars_pyg"                => $row00['moneda_base_codigo_ars_pyg'],
@@ -1642,6 +1651,7 @@
                     "cotizacion_detalle_fecha_pizarra_ars_pyg"  => $row00['cotizacion_detalle_fecha_pizarra_ars_pyg'],
                     "cotizacion_detalle_alta_fecha_ars_pyg"     => $row00['cotizacion_detalle_alta_fecha_ars_pyg'],
                     "cotizacion_detalle_alta_hora_ars_pyg"      => $row00['cotizacion_detalle_alta_hora_ars_pyg'],
+                    "cotizacion_detalle_alta_usuario_ars_pyg"   => $row00['cotizacion_detalle_alta_usuario_ars_pyg'],
 
                     "cotizacion_codigo_eur_pyg"                 => $row00['cotizacion_codigo_eur_pyg'],
                     "moneda_base_codigo_eur_pyg"                => $row00['moneda_base_codigo_eur_pyg'],
@@ -1658,6 +1668,7 @@
                     "cotizacion_detalle_fecha_pizarra_eur_pyg"  => $row00['cotizacion_detalle_fecha_pizarra_eur_pyg'],
                     "cotizacion_detalle_alta_fecha_eur_pyg"     => $row00['cotizacion_detalle_alta_fecha_eur_pyg'],
                     "cotizacion_detalle_alta_hora_eur_pyg"      => $row00['cotizacion_detalle_alta_hora_eur_pyg'],
+                    "cotizacion_detalle_alta_usuario_eur_pyg"   => $row00['cotizacion_detalle_alta_usuario_eur_pyg'],
 
                     "cotizacion_codigo_usd_brl"                 => $row00['cotizacion_codigo_usd_brl'],
                     "moneda_base_codigo_usd_brl"                => $row00['moneda_base_codigo_usd_brl'],
@@ -1674,6 +1685,7 @@
                     "cotizacion_detalle_fecha_pizarra_usd_brl"  => $row00['cotizacion_detalle_fecha_pizarra_usd_brl'],
                     "cotizacion_detalle_alta_fecha_usd_brl"     => $row00['cotizacion_detalle_alta_fecha_usd_brl'],
                     "cotizacion_detalle_alta_hora_usd_brl"      => $row00['cotizacion_detalle_alta_hora_usd_brl'],
+                    "cotizacion_detalle_alta_usuario_usd_brl"   => $row00['cotizacion_detalle_alta_usuario_usd_brl'],
 
                     "cotizacion_codigo_usd_ars"                 => $row00['cotizacion_codigo_usd_ars'],
                     "moneda_base_codigo_usd_ars"                => $row00['moneda_base_codigo_usd_ars'],
@@ -1690,6 +1702,7 @@
                     "cotizacion_detalle_fecha_pizarra_usd_ars"  => $row00['cotizacion_detalle_fecha_pizarra_usd_ars'],
                     "cotizacion_detalle_alta_fecha_usd_ars"     => $row00['cotizacion_detalle_alta_fecha_usd_ars'],
                     "cotizacion_detalle_alta_hora_usd_ars"      => $row00['cotizacion_detalle_alta_hora_usd_ars'],
+                    "cotizacion_detalle_alta_usuario_usd_ars"   => $row00['cotizacion_detalle_alta_usuario_usd_ars'],
 
                     "cotizacion_codigo_eur_usd"                 => $row00['cotizacion_codigo_eur_usd'],
                     "moneda_base_codigo_eur_usd"                => $row00['moneda_base_codigo_eur_usd'],
@@ -1705,7 +1718,8 @@
                     "cotizacion_detalle_venta_eur_usd"          => $row00['cotizacion_detalle_venta_eur_usd'],
                     "cotizacion_detalle_fecha_pizarra_eur_usd"  => $row00['cotizacion_detalle_fecha_pizarra_eur_usd'],
                     "cotizacion_detalle_alta_fecha_eur_usd"     => $row00['cotizacion_detalle_alta_fecha_eur_usd'],
-                    "cotizacion_detalle_alta_hora_eur_usd"      => $row00['cotizacion_detalle_alta_hora_eur_usd']
+                    "cotizacion_detalle_alta_hora_eur_usd"      => $row00['cotizacion_detalle_alta_hora_eur_usd'],
+                    "cotizacion_detalle_alta_usuario_eur_usd"   => $row00['cotizacion_detalle_alta_usuario_eur_usd']
                 );
             }
 
