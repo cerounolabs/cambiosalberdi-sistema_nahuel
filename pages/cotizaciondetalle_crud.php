@@ -335,7 +335,7 @@
                                                         <div class="form-group row">
                                                             <label class="col-12" for="var31"> COMPRA </label>
                                                             <div class="col-12">
-                                                                <input type="number" step="any" class="form-control" id="var31" name="var31" value="<?php echo $var31; ?>" style="text-transform:uppercase; background-color:rgba(62, 75, 91, 0.2); border:1px solid black; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                                <input type="number" step="any" class="form-control" id="var31" name="var31" value="<?php echo $var31; ?>" style="text-transform:uppercase; background-color:rgba(182, 109, 255, 0.2); border:1px solid purple; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -344,7 +344,7 @@
                                                         <div class="form-group row">
                                                             <label class="col-12" for="var32"> VENTA </label>
                                                             <div class="col-12">
-                                                                <input type="number" step="any" class="form-control" id="var32" name="var32" value="<?php echo $var32; ?>" style="text-transform:uppercase; background-color:rgba(62, 75, 91, 0.2); border:1px solid black; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                                <input type="number" step="any" class="form-control" id="var32" name="var32" value="<?php echo $var32; ?>" style="text-transform:uppercase; background-color:rgba(182, 109, 255, 0.2); border:1px solid purple; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -359,7 +359,7 @@
                                                         <div class="form-group row">
                                                             <label class="col-12" for="var41"> COMPRA </label>
                                                             <div class="col-12">
-                                                                <input type="number" step="any" class="form-control" id="var41" name="var41" value="<?php echo $var41; ?>" style="text-transform:uppercase; background-color:rgba(182, 109, 255, 0.2); border:1px solid purple; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                                <input type="number" step="any" class="form-control" id="var41" name="var41" value="<?php echo $var41; ?>" style="text-transform:uppercase; background-color:rgba(62, 75, 91, 0.2); border:1px solid black; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -368,7 +368,7 @@
                                                         <div class="form-group row">
                                                             <label class="col-12" for="var42"> VENTA </label>
                                                             <div class="col-12">
-                                                                <input type="number" step="any" class="form-control" id="var42" name="var42" value="<?php echo $var42; ?>" style="text-transform:uppercase; background-color:rgba(182, 109, 255, 0.2); border:1px solid purple; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                                <input type="number" step="any" class="form-control" id="var42" name="var42" value="<?php echo $var42; ?>" style="text-transform:uppercase; background-color:rgba(62, 75, 91, 0.2); border:1px solid black; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
                                                             </div>
                                                         </div>
                                                     </div>

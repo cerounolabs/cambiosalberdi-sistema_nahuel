@@ -6,7 +6,7 @@
 
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
             <div class="search-field d-none d-md-block">
-                <p style="font-size:2.5rem !important; font-weight:bold; margin:0px; padding:5px;">SISTEMA NAHUEL <span style="font-size:1rem !important;">v1.3<span></p>
+                <p style="font-size:2.5rem !important; font-weight:bold; margin:0px; padding:5px;">SISTEMA NAHUEL <span style="font-size:1rem !important;">v1.4<span></p>
             </div>
             <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item nav-profile dropdown">
