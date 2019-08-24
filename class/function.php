@@ -1730,4 +1730,353 @@
 
         return $result;
     }
+
+    function getPizarra3($var01){
+        $str_conn       = getConexion();
+        $str_qry        = "SELECT
+        i7.codCotizacionDetalle AS      cotizacion_detalle_codigo_eur_usd,
+        i7.impCompra            AS      cotizacion_detalle_compra_eur_usd,
+        i7.impVenta             AS      cotizacion_detalle_venta_eur_usd,
+        i7.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_eur_usd,
+        i7.fecAlta              AS      cotizacion_detalle_alta_fecha_eur_usd,
+        i7.horAlta              AS      cotizacion_detalle_alta_hora_eur_usd,
+        i7.usuAlta              AS      cotizacion_detalle_alta_usuario_eur_usd,
+
+        h7.codMoneda            AS      moneda_relacionada_codigo_eur_usd,
+        h7.nomMoneda            AS      moneda_relacionada_nombre_eur_usd,
+        h7.bcpMoneda            AS      moneda_relacionada_bcp_eur_usd,
+        h7.patMoneda            AS      moneda_relacionada_path_eur_usd,
+
+        g7.codMoneda            AS      moneda_base_codigo_eur_usd,
+        g7.nomMoneda            AS      moneda_base_nombre_eur_usd,
+        g7.bcpMoneda            AS      moneda_base_bcp_eur_usd,
+        g7.patMoneda            AS      moneda_base_path_eur_usd,
+        
+        f7.codCotizacion        AS      cotizacion_codigo_eur_usd,
+
+        i6.codCotizacionDetalle AS      cotizacion_detalle_codigo_usd_ars,
+        i6.impCompra            AS      cotizacion_detalle_compra_usd_ars,
+        i6.impVenta             AS      cotizacion_detalle_venta_usd_ars,
+        i6.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_usd_ars,
+        i6.fecAlta              AS      cotizacion_detalle_alta_fecha_usd_ars,
+        i6.horAlta              AS      cotizacion_detalle_alta_hora_usd_ars,
+        i6.usuAlta              AS      cotizacion_detalle_alta_usuario_usd_ars,
+
+        h6.codMoneda            AS      moneda_relacionada_codigo_usd_ars,
+        h6.nomMoneda            AS      moneda_relacionada_nombre_usd_ars,
+        h6.bcpMoneda            AS      moneda_relacionada_bcp_usd_ars,
+        h6.patMoneda            AS      moneda_relacionada_path_usd_ars,
+
+        g6.codMoneda            AS      moneda_base_codigo_usd_ars,
+        g6.nomMoneda            AS      moneda_base_nombre_usd_ars,
+        g6.bcpMoneda            AS      moneda_base_bcp_usd_ars,
+        g6.patMoneda            AS      moneda_base_path_usd_ars,
+        
+        f6.codCotizacion        AS      cotizacion_codigo_usd_ars,
+
+        i5.codCotizacionDetalle AS      cotizacion_detalle_codigo_usd_brl,
+        i5.impCompra            AS      cotizacion_detalle_compra_usd_brl,
+        i5.impVenta             AS      cotizacion_detalle_venta_usd_brl,
+        i5.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_usd_brl,
+        i5.fecAlta              AS      cotizacion_detalle_alta_fecha_usd_brl,
+        i5.horAlta              AS      cotizacion_detalle_alta_hora_usd_brl,
+        i5.usuAlta              AS      cotizacion_detalle_alta_usuario_usd_brl,
+
+        h5.codMoneda            AS      moneda_relacionada_codigo_usd_brl,
+        h5.nomMoneda            AS      moneda_relacionada_nombre_usd_brl,
+        h5.bcpMoneda            AS      moneda_relacionada_bcp_usd_brl,
+        h5.patMoneda            AS      moneda_relacionada_path_usd_brl,
+
+        g5.codMoneda            AS      moneda_base_codigo_usd_brl,
+        g5.nomMoneda            AS      moneda_base_nombre_usd_brl,
+        g5.bcpMoneda            AS      moneda_base_bcp_usd_brl,
+        g5.patMoneda            AS      moneda_base_path_usd_brl,
+        
+        f5.codCotizacion        AS      cotizacion_codigo_usd_brl,
+
+        i4.codCotizacionDetalle AS      cotizacion_detalle_codigo_eur_pyg,
+        i4.impCompra            AS      cotizacion_detalle_compra_eur_pyg,
+        i4.impVenta             AS      cotizacion_detalle_venta_eur_pyg,
+        i4.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_eur_pyg,
+        i4.fecAlta              AS      cotizacion_detalle_alta_fecha_eur_pyg,
+        i4.horAlta              AS      cotizacion_detalle_alta_hora_eur_pyg,
+        i4.usuAlta              AS      cotizacion_detalle_alta_usuario_eur_pyg,
+
+        h4.codMoneda            AS      moneda_relacionada_codigo_eur_pyg,
+        h4.nomMoneda            AS      moneda_relacionada_nombre_eur_pyg,
+        h4.bcpMoneda            AS      moneda_relacionada_bcp_eur_pyg,
+        h4.patMoneda            AS      moneda_relacionada_path_eur_pyg,
+
+        g4.codMoneda            AS      moneda_base_codigo_eur_pyg,
+        g4.nomMoneda            AS      moneda_base_nombre_eur_pyg,
+        g4.bcpMoneda            AS      moneda_base_bcp_eur_pyg,
+        g4.patMoneda            AS      moneda_base_path_eur_pyg,
+        
+        f4.codCotizacion        AS      cotizacion_codigo_eur_pyg,
+
+        i3.codCotizacionDetalle AS      cotizacion_detalle_codigo_ars_pyg,
+        i3.impCompra            AS      cotizacion_detalle_compra_ars_pyg,
+        i3.impVenta             AS      cotizacion_detalle_venta_ars_pyg,
+        i3.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_ars_pyg,
+        i3.fecAlta              AS      cotizacion_detalle_alta_fecha_ars_pyg,
+        i3.horAlta              AS      cotizacion_detalle_alta_hora_ars_pyg,
+        i3.usuAlta              AS      cotizacion_detalle_alta_usuario_ars_pyg,
+
+        h3.codMoneda            AS      moneda_relacionada_codigo_ars_pyg,
+        h3.nomMoneda            AS      moneda_relacionada_nombre_ars_pyg,
+        h3.bcpMoneda            AS      moneda_relacionada_bcp_ars_pyg,
+        h3.patMoneda            AS      moneda_relacionada_path_ars_pyg,
+
+        g3.codMoneda            AS      moneda_base_codigo_ars_pyg,
+        g3.nomMoneda            AS      moneda_base_nombre_ars_pyg,
+        g3.bcpMoneda            AS      moneda_base_bcp_ars_pyg,
+        g3.patMoneda            AS      moneda_base_path_ars_pyg,
+        
+        f3.codCotizacion        AS      cotizacion_codigo_ars_pyg,
+
+        i2.codCotizacionDetalle AS      cotizacion_detalle_codigo_brl_pyg,
+        i2.impCompra            AS      cotizacion_detalle_compra_brl_pyg,
+        i2.impVenta             AS      cotizacion_detalle_venta_brl_pyg,
+        i2.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_brl_pyg,
+        i2.fecAlta              AS      cotizacion_detalle_alta_fecha_brl_pyg,
+        i2.horAlta              AS      cotizacion_detalle_alta_hora_brl_pyg,
+        i2.usuAlta              AS      cotizacion_detalle_alta_usuario_brl_pyg,
+
+        h2.codMoneda            AS      moneda_relacionada_codigo_brl_pyg,
+        h2.nomMoneda            AS      moneda_relacionada_nombre_brl_pyg,
+        h2.bcpMoneda            AS      moneda_relacionada_bcp_brl_pyg,
+        h2.patMoneda            AS      moneda_relacionada_path_brl_pyg,
+
+        g2.codMoneda            AS      moneda_base_codigo_brl_pyg,
+        g2.nomMoneda            AS      moneda_base_nombre_brl_pyg,
+        g2.bcpMoneda            AS      moneda_base_bcp_brl_pyg,
+        g2.patMoneda            AS      moneda_base_path_brl_pyg,
+        
+        f2.codCotizacion        AS      cotizacion_codigo_brl_pyg,
+
+        i1.codCotizacionDetalle AS      cotizacion_detalle_codigo_usd_pyg,
+        i1.impCompra            AS      cotizacion_detalle_compra_usd_pyg,
+        i1.impVenta             AS      cotizacion_detalle_venta_usd_pyg,
+        i1.fecPizarra           AS      cotizacion_detalle_fecha_pizarra_usd_pyg,
+        i1.fecAlta              AS      cotizacion_detalle_alta_fecha_usd_pyg,
+        i1.horAlta              AS      cotizacion_detalle_alta_hora_usd_pyg,
+        i1.usuAlta              AS      cotizacion_detalle_alta_usuario_usd_pyg,
+
+        h1.codMoneda            AS      moneda_relacionada_codigo_usd_pyg,
+        h1.nomMoneda            AS      moneda_relacionada_nombre_usd_pyg,
+        h1.bcpMoneda            AS      moneda_relacionada_bcp_usd_pyg,
+        h1.patMoneda            AS      moneda_relacionada_path_usd_pyg,
+
+        g1.codMoneda            AS      moneda_base_codigo_usd_pyg,
+        g1.nomMoneda            AS      moneda_base_nombre_usd_pyg,
+        g1.bcpMoneda            AS      moneda_base_bcp_usd_pyg,
+        g1.patMoneda            AS      moneda_base_path_usd_pyg,
+        
+        f1.codCotizacion        AS      cotizacion_codigo_usd_pyg,
+
+        e.codCiudad             AS      ciudad_codigo,
+        e.nomCiudad             AS      ciudad_nombre,
+        d.codEmpresa            AS      empresa_codigo,
+        d.nomEmpresa            AS      empresa_nombre,
+        d.urlEmpresa            AS      empresa_url,
+        c.codSucursal           AS      sucursal_codigo,
+        c.nomSucursal           AS      sucursal_nombre
+
+        FROM SUCURSAL c
+        INNER JOIN EMPRESA d ON c.codEmpresa = d.codEmpresa
+        INNER JOIN CIUDAD e ON c.codCiudad = e.codCiudad
+
+        INNER JOIN COTIZACION f1 ON c.codSucursal = f1.codSucursal
+        INNER JOIN MONEDA g1 ON f1.codMonedaBase = g1.codMoneda
+        INNER JOIN MONEDA h1 ON f1.codMonedaRelacion = h1.codMoneda
+        INNER JOIN COTIZACIONDETALLE i1 ON f1.codCotizacion = i1.codCotizacion
+
+        INNER JOIN COTIZACION f2 ON c.codSucursal = f2.codSucursal
+        INNER JOIN MONEDA g2 ON f2.codMonedaBase = g2.codMoneda
+        INNER JOIN MONEDA h2 ON f2.codMonedaRelacion = h2.codMoneda
+        INNER JOIN COTIZACIONDETALLE i2 ON f2.codCotizacion = i2.codCotizacion
+
+        INNER JOIN COTIZACION f3 ON c.codSucursal = f3.codSucursal
+        INNER JOIN MONEDA g3 ON f3.codMonedaBase = g3.codMoneda
+        INNER JOIN MONEDA h3 ON f3.codMonedaRelacion = h3.codMoneda
+        INNER JOIN COTIZACIONDETALLE i3 ON f3.codCotizacion = i3.codCotizacion
+
+        INNER JOIN COTIZACION f4 ON c.codSucursal = f4.codSucursal
+        INNER JOIN MONEDA g4 ON f4.codMonedaBase = g4.codMoneda
+        INNER JOIN MONEDA h4 ON f4.codMonedaRelacion = h4.codMoneda
+        INNER JOIN COTIZACIONDETALLE i4 ON f4.codCotizacion = i4.codCotizacion
+
+        INNER JOIN COTIZACION f5 ON c.codSucursal = f5.codSucursal
+        INNER JOIN MONEDA g5 ON f5.codMonedaBase = g5.codMoneda
+        INNER JOIN MONEDA h5 ON f5.codMonedaRelacion = h5.codMoneda
+        INNER JOIN COTIZACIONDETALLE i5 ON f5.codCotizacion = i5.codCotizacion
+
+        INNER JOIN COTIZACION f6 ON c.codSucursal = f6.codSucursal
+        INNER JOIN MONEDA g6 ON f6.codMonedaBase = g6.codMoneda
+        INNER JOIN MONEDA h6 ON f6.codMonedaRelacion = h6.codMoneda
+        INNER JOIN COTIZACIONDETALLE i6 ON f6.codCotizacion = i6.codCotizacion
+
+        INNER JOIN COTIZACION f7 ON c.codSucursal = f7.codSucursal
+        INNER JOIN MONEDA g7 ON f7.codMonedaBase = g7.codMoneda
+        INNER JOIN MONEDA h7 ON f7.codMonedaRelacion = h7.codMoneda
+        INNER JOIN COTIZACIONDETALLE i7 ON f7.codCotizacion = i7.codCotizacion
+
+        WHERE c.codSucursal = '$var01' AND (i1.CodEstado = 'A' AND f1.codMonedaBase = 2 AND f1.codMonedaRelacion = 1) AND (i2.CodEstado = 'A' AND f2.codMonedaBase = 3 AND f2.codMonedaRelacion = 1) AND 
+        (i3.CodEstado = 'A' AND f3.codMonedaBase = 5 AND f3.codMonedaRelacion = 1)  AND (i4.CodEstado = 'A' AND f4.codMonedaBase = 4 AND f4.codMonedaRelacion = 1) AND (i5.CodEstado = 'A' AND f5.codMonedaBase = 2 AND f5.codMonedaRelacion = 3) 
+        AND (i6.CodEstado = 'A' AND f6.codMonedaBase = 2 AND f6.codMonedaRelacion = 5) AND (i7.CodEstado = 'A' AND f7.codMonedaBase = 4 AND f7.codMonedaRelacion = 2)
+
+        ORDER BY d.nomEmpresa, c.nomSucursal, e.nomCiudad";
+
+        if ($query = $str_conn->query($str_qry)) {
+            while($row00 = $query->fetch_assoc()) {
+                if ($row00['estado_codigo'] == 'A'){
+                    $estado = 'ACTIVO';
+                } else {
+                    $estado = 'INACTIVO';
+                }
+
+                $result[]  = array(
+                    "estado_codigo"                             => $row00['estado_codigo'],
+                    "estado_nombre"                             => $estado,
+                    "tablero_codigo"                            => $row00['tablero_codigo'],
+                    "tablero_nombre"                            => $row00['tablero_nombre'],
+
+                    "tablero_detalle_codigo"                    => $row00['tablero_detalle_codigo'],
+
+                    "ciudad_codigo"                             => $row00['ciudad_codigo'],
+                    "ciudad_nombre"                             => $row00['ciudad_nombre'],
+                    "empresa_codigo"                            => $row00['empresa_codigo'],
+                    "empresa_nombre"                            => $row00['empresa_nombre'],
+                    "empresa_url"                               => $row00['empresa_url'],
+                    "sucursal_codigo"                           => $row00['sucursal_codigo'],
+                    "sucursal_nombre"                           => $row00['sucursal_nombre'],
+
+                    "cotizacion_codigo_usd_pyg"                 => $row00['cotizacion_codigo_usd_pyg'],
+                    "moneda_base_codigo_usd_pyg"                => $row00['moneda_base_codigo_usd_pyg'],
+                    "moneda_base_nombre_usd_pyg"                => $row00['moneda_base_nombre_usd_pyg'],
+                    "moneda_base_bcp_usd_pyg"                   => $row00['moneda_base_bcp_usd_pyg'],
+                    "moneda_base_path_usd_pyg"                  => $row00['moneda_base_path_usd_pyg'],
+                    "moneda_relacionada_codigo_usd_pyg"         => $row00['moneda_relacionada_codigo_usd_pyg'],
+                    "moneda_relacionada_nombre_usd_pyg"         => $row00['moneda_relacionada_nombre_usd_pyg'],
+                    "moneda_relacionada_bcp_usd_pyg"            => $row00['moneda_relacionada_bcp_usd_pyg'],
+                    "moneda_relacionada_path_usd_pyg"           => $row00['moneda_relacionada_path_usd_pyg'],
+                    "cotizacion_detalle_codigo_usd_pyg"         => $row00['cotizacion_detalle_codigo_usd_pyg'],
+                    "cotizacion_detalle_compra_usd_pyg"         => $row00['cotizacion_detalle_compra_usd_pyg'],
+                    "cotizacion_detalle_venta_usd_pyg"          => $row00['cotizacion_detalle_venta_usd_pyg'],
+                    "cotizacion_detalle_fecha_pizarra_usd_pyg"  => $row00['cotizacion_detalle_fecha_pizarra_usd_pyg'],
+                    "cotizacion_detalle_alta_fecha_usd_pyg"     => $row00['cotizacion_detalle_alta_fecha_usd_pyg'],
+                    "cotizacion_detalle_alta_hora_usd_pyg"      => $row00['cotizacion_detalle_alta_hora_usd_pyg'],
+                    "cotizacion_detalle_alta_usuario_usd_pyg"   => $row00['cotizacion_detalle_alta_usuario_usd_pyg'],
+
+                    "cotizacion_codigo_brl_pyg"                 => $row00['cotizacion_codigo_brl_pyg'],
+                    "moneda_base_codigo_brl_pyg"                => $row00['moneda_base_codigo_brl_pyg'],
+                    "moneda_base_nombre_brl_pyg"                => $row00['moneda_base_nombre_brl_pyg'],
+                    "moneda_base_bcp_brl_pyg"                   => $row00['moneda_base_bcp_brl_pyg'],
+                    "moneda_base_path_brl_pyg"                  => $row00['moneda_base_path_brl_pyg'],
+                    "moneda_relacionada_codigo_brl_pyg"         => $row00['moneda_relacionada_codigo_brl_pyg'],
+                    "moneda_relacionada_nombre_brl_pyg"         => $row00['moneda_relacionada_nombre_brl_pyg'],
+                    "moneda_relacionada_bcp_brl_pyg"            => $row00['moneda_relacionada_bcp_brl_pyg'],
+                    "moneda_relacionada_path_brl_pyg"           => $row00['moneda_relacionada_path_brl_pyg'],
+                    "cotizacion_detalle_codigo_brl_pyg"         => $row00['cotizacion_detalle_codigo_brl_pyg'],
+                    "cotizacion_detalle_compra_brl_pyg"         => $row00['cotizacion_detalle_compra_brl_pyg'],
+                    "cotizacion_detalle_venta_brl_pyg"          => $row00['cotizacion_detalle_venta_brl_pyg'],
+                    "cotizacion_detalle_fecha_pizarra_brl_pyg"  => $row00['cotizacion_detalle_fecha_pizarra_brl_pyg'],
+                    "cotizacion_detalle_alta_fecha_brl_pyg"     => $row00['cotizacion_detalle_alta_fecha_brl_pyg'],
+                    "cotizacion_detalle_alta_hora_brl_pyg"      => $row00['cotizacion_detalle_alta_hora_brl_pyg'],
+                    "cotizacion_detalle_alta_usuario_brl_pyg"   => $row00['cotizacion_detalle_alta_usuario_brl_pyg'],
+
+                    "cotizacion_codigo_ars_pyg"                 => $row00['cotizacion_codigo_ars_pyg'],
+                    "moneda_base_codigo_ars_pyg"                => $row00['moneda_base_codigo_ars_pyg'],
+                    "moneda_base_nombre_ars_pyg"                => $row00['moneda_base_nombre_ars_pyg'],
+                    "moneda_base_bcp_ars_pyg"                   => $row00['moneda_base_bcp_ars_pyg'],
+                    "moneda_base_path_ars_pyg"                  => $row00['moneda_base_path_ars_pyg'],
+                    "moneda_relacionada_codigo_ars_pyg"         => $row00['moneda_relacionada_codigo_ars_pyg'],
+                    "moneda_relacionada_nombre_ars_pyg"         => $row00['moneda_relacionada_nombre_ars_pyg'],
+                    "moneda_relacionada_bcp_ars_pyg"            => $row00['moneda_relacionada_bcp_ars_pyg'],
+                    "moneda_relacionada_path_ars_pyg"           => $row00['moneda_relacionada_path_ars_pyg'],
+                    "cotizacion_detalle_codigo_ars_pyg"         => $row00['cotizacion_detalle_codigo_ars_pyg'],
+                    "cotizacion_detalle_compra_ars_pyg"         => $row00['cotizacion_detalle_compra_ars_pyg'],
+                    "cotizacion_detalle_venta_ars_pyg"          => $row00['cotizacion_detalle_venta_ars_pyg'],
+                    "cotizacion_detalle_fecha_pizarra_ars_pyg"  => $row00['cotizacion_detalle_fecha_pizarra_ars_pyg'],
+                    "cotizacion_detalle_alta_fecha_ars_pyg"     => $row00['cotizacion_detalle_alta_fecha_ars_pyg'],
+                    "cotizacion_detalle_alta_hora_ars_pyg"      => $row00['cotizacion_detalle_alta_hora_ars_pyg'],
+                    "cotizacion_detalle_alta_usuario_ars_pyg"   => $row00['cotizacion_detalle_alta_usuario_ars_pyg'],
+
+                    "cotizacion_codigo_eur_pyg"                 => $row00['cotizacion_codigo_eur_pyg'],
+                    "moneda_base_codigo_eur_pyg"                => $row00['moneda_base_codigo_eur_pyg'],
+                    "moneda_base_nombre_eur_pyg"                => $row00['moneda_base_nombre_eur_pyg'],
+                    "moneda_base_bcp_eur_pyg"                   => $row00['moneda_base_bcp_eur_pyg'],
+                    "moneda_base_path_eur_pyg"                  => $row00['moneda_base_path_eur_pyg'],
+                    "moneda_relacionada_codigo_eur_pyg"         => $row00['moneda_relacionada_codigo_eur_pyg'],
+                    "moneda_relacionada_nombre_eur_pyg"         => $row00['moneda_relacionada_nombre_eur_pyg'],
+                    "moneda_relacionada_bcp_eur_pyg"            => $row00['moneda_relacionada_bcp_eur_pyg'],
+                    "moneda_relacionada_path_eur_pyg"           => $row00['moneda_relacionada_path_eur_pyg'],
+                    "cotizacion_detalle_codigo_eur_pyg"         => $row00['cotizacion_detalle_codigo_eur_pyg'],
+                    "cotizacion_detalle_compra_eur_pyg"         => $row00['cotizacion_detalle_compra_eur_pyg'],
+                    "cotizacion_detalle_venta_eur_pyg"          => $row00['cotizacion_detalle_venta_eur_pyg'],
+                    "cotizacion_detalle_fecha_pizarra_eur_pyg"  => $row00['cotizacion_detalle_fecha_pizarra_eur_pyg'],
+                    "cotizacion_detalle_alta_fecha_eur_pyg"     => $row00['cotizacion_detalle_alta_fecha_eur_pyg'],
+                    "cotizacion_detalle_alta_hora_eur_pyg"      => $row00['cotizacion_detalle_alta_hora_eur_pyg'],
+                    "cotizacion_detalle_alta_usuario_eur_pyg"   => $row00['cotizacion_detalle_alta_usuario_eur_pyg'],
+
+                    "cotizacion_codigo_usd_brl"                 => $row00['cotizacion_codigo_usd_brl'],
+                    "moneda_base_codigo_usd_brl"                => $row00['moneda_base_codigo_usd_brl'],
+                    "moneda_base_nombre_usd_brl"                => $row00['moneda_base_nombre_usd_brl'],
+                    "moneda_base_bcp_usd_brl"                   => $row00['moneda_base_bcp_usd_brl'],
+                    "moneda_base_path_usd_brl"                  => $row00['moneda_base_path_usd_brl'],
+                    "moneda_relacionada_codigo_usd_brl"         => $row00['moneda_relacionada_codigo_usd_brl'],
+                    "moneda_relacionada_nombre_usd_brl"         => $row00['moneda_relacionada_nombre_usd_brl'],
+                    "moneda_relacionada_bcp_usd_brl"            => $row00['moneda_relacionada_bcp_usd_brl'],
+                    "moneda_relacionada_path_usd_brl"           => $row00['moneda_relacionada_path_usd_brl'],
+                    "cotizacion_detalle_codigo_usd_brl"         => $row00['cotizacion_detalle_codigo_usd_brl'],
+                    "cotizacion_detalle_compra_usd_brl"         => $row00['cotizacion_detalle_compra_usd_brl'],
+                    "cotizacion_detalle_venta_usd_brl"          => $row00['cotizacion_detalle_venta_usd_brl'],
+                    "cotizacion_detalle_fecha_pizarra_usd_brl"  => $row00['cotizacion_detalle_fecha_pizarra_usd_brl'],
+                    "cotizacion_detalle_alta_fecha_usd_brl"     => $row00['cotizacion_detalle_alta_fecha_usd_brl'],
+                    "cotizacion_detalle_alta_hora_usd_brl"      => $row00['cotizacion_detalle_alta_hora_usd_brl'],
+                    "cotizacion_detalle_alta_usuario_usd_brl"   => $row00['cotizacion_detalle_alta_usuario_usd_brl'],
+
+                    "cotizacion_codigo_usd_ars"                 => $row00['cotizacion_codigo_usd_ars'],
+                    "moneda_base_codigo_usd_ars"                => $row00['moneda_base_codigo_usd_ars'],
+                    "moneda_base_nombre_usd_ars"                => $row00['moneda_base_nombre_usd_ars'],
+                    "moneda_base_bcp_usd_ars"                   => $row00['moneda_base_bcp_usd_ars'],
+                    "moneda_base_path_usd_ars"                  => $row00['moneda_base_path_usd_ars'],
+                    "moneda_relacionada_codigo_usd_ars"         => $row00['moneda_relacionada_codigo_usd_ars'],
+                    "moneda_relacionada_nombre_usd_ars"         => $row00['moneda_relacionada_nombre_usd_ars'],
+                    "moneda_relacionada_bcp_usd_ars"            => $row00['moneda_relacionada_bcp_usd_ars'],
+                    "moneda_relacionada_path_usd_ars"           => $row00['moneda_relacionada_path_usd_ars'],
+                    "cotizacion_detalle_codigo_usd_ars"         => $row00['cotizacion_detalle_codigo_usd_ars'],
+                    "cotizacion_detalle_compra_usd_ars"         => $row00['cotizacion_detalle_compra_usd_ars'],
+                    "cotizacion_detalle_venta_usd_ars"          => $row00['cotizacion_detalle_venta_usd_ars'],
+                    "cotizacion_detalle_fecha_pizarra_usd_ars"  => $row00['cotizacion_detalle_fecha_pizarra_usd_ars'],
+                    "cotizacion_detalle_alta_fecha_usd_ars"     => $row00['cotizacion_detalle_alta_fecha_usd_ars'],
+                    "cotizacion_detalle_alta_hora_usd_ars"      => $row00['cotizacion_detalle_alta_hora_usd_ars'],
+                    "cotizacion_detalle_alta_usuario_usd_ars"   => $row00['cotizacion_detalle_alta_usuario_usd_ars'],
+
+                    "cotizacion_codigo_eur_usd"                 => $row00['cotizacion_codigo_eur_usd'],
+                    "moneda_base_codigo_eur_usd"                => $row00['moneda_base_codigo_eur_usd'],
+                    "moneda_base_nombre_eur_usd"                => $row00['moneda_base_nombre_eur_usd'],
+                    "moneda_base_bcp_eur_usd"                   => $row00['moneda_base_bcp_eur_usd'],
+                    "moneda_base_path_eur_usd"                  => $row00['moneda_base_path_eur_usd'],
+                    "moneda_relacionada_codigo_eur_usd"         => $row00['moneda_relacionada_codigo_eur_usd'],
+                    "moneda_relacionada_nombre_eur_usd"         => $row00['moneda_relacionada_nombre_eur_usd'],
+                    "moneda_relacionada_bcp_eur_usd"            => $row00['moneda_relacionada_bcp_eur_usd'],
+                    "moneda_relacionada_path_eur_usd"           => $row00['moneda_relacionada_path_eur_usd'],
+                    "cotizacion_detalle_codigo_eur_usd"         => $row00['cotizacion_detalle_codigo_eur_usd'],
+                    "cotizacion_detalle_compra_eur_usd"         => $row00['cotizacion_detalle_compra_eur_usd'],
+                    "cotizacion_detalle_venta_eur_usd"          => $row00['cotizacion_detalle_venta_eur_usd'],
+                    "cotizacion_detalle_fecha_pizarra_eur_usd"  => $row00['cotizacion_detalle_fecha_pizarra_eur_usd'],
+                    "cotizacion_detalle_alta_fecha_eur_usd"     => $row00['cotizacion_detalle_alta_fecha_eur_usd'],
+                    "cotizacion_detalle_alta_hora_eur_usd"      => $row00['cotizacion_detalle_alta_hora_eur_usd'],
+                    "cotizacion_detalle_alta_usuario_eur_usd"   => $row00['cotizacion_detalle_alta_usuario_eur_usd']
+                );
+            }
+
+            $query->free();
+        }        
+
+        $str_conn->close();
+
+        return $result;
+    }
 ?>

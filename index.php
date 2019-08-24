@@ -32,7 +32,7 @@
       <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="content-wrapper d-flex align-items-center auth">
           <div class="row w-100">
-            <div class="col-lg-4 mx-auto">
+            <div class="mx-auto">
               <div class="auth-form-light text-left p-5">
                 <h1 style="text-align:center;">Cambios Alberdi S.A.</h1>
                 <h3 style="text-align:center;">Bienvenido al Sistema NAHUEL</h3>
