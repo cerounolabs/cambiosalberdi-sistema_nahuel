@@ -50,7 +50,7 @@
     ibase_close($str_conn);
 
     if ($acceso00 === TRUE) {
-        header('Location: ../pages/cotizaciondetalle_crud.php?var00=CB');
+        header('Location: ../pages/cotizaciondetalle_crud.php?var00=CB&var03=1&var06=1');
     } else {
         header('Location: ../class/logout.php');
     }
