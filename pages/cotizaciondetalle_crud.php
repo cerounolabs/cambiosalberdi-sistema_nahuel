@@ -6,6 +6,21 @@
     $var00 = $_GET['var00'];
     $var01 = $_GET['var01'];
     $var03 = $_GET['var03'];
+    $var06 = $_GET['var06'];
+    $var11 = 0;
+    $var12 = 0;
+    $var21 = 0;
+    $var22 = 0;
+    $var31 = 0;
+    $var32 = 0;
+    $var41 = 0;
+    $var42 = 0;
+    $var51 = 0;
+    $var52 = 0;
+    $var61 = 0;
+    $var62 = 0;
+    $var71 = 0;
+    $var72 = 0;
     $sysUse= $_SESSION['Sys02'];
 
     if ($var00 == 'CA' || $var00 == 'UA' || $var00 == 'DA') {
@@ -188,21 +203,49 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-group row">
-                                                        <label class="col-12" for="var03"> EMPRESA - SUCURSAL - CIUDAD</label>
+                                                        <label class="col-12" for="var06"> CIUDAD</label>
                                                         <div class="col-12">
-                                                            <select class="form-control" id="var03" name="var03" onchange="selectSucursal()" required <?php echo $readonly; ?>>
+                                                            <select class="form-control" id="var06" name="var06" onchange="reload()" required <?php echo $readonly; ?>>
+<?php
+    $result = getCiudad();
+
+    foreach($result as $data) {
+        if ($data['estado_codigo'] == 'A') {
+            if ($data['ciudad_codigo'] == $var06) {
+                $selCiu = 'selected';
+            } else {
+                $selCiu = '';
+            }
+?>
+                                                                <option value="<?php echo $data['ciudad_codigo']; ?>" <?php echo $selCiu; ?>> <?php echo $data['ciudad_nombre']; ?> </option>
+<?php
+        }
+    }
+?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group row">
+                                                        <label class="col-12" for="var03"> EMPRESA - SUCURSAL</label>
+                                                        <div class="col-12">
+                                                            <select class="form-control" id="var03" name="var03" onchange="reload()" required <?php echo $readonly; ?>>
 <?php
     $result = getSucursal();
 
     foreach($result as $data) {
-        if ($data['estado_codigo'] == 'A') {
+        if ($data['estado_codigo'] == 'A' && $data['ciudad_codigo'] == $var06) {
             if ($data['sucursal_codigo'] == $var03) {
                 $selSuc = 'selected';
             } else {
                 $selSuc = '';
             }
 ?>
-                                                                <option value="<?php echo $data['sucursal_codigo']; ?>" <?php echo $selSuc; ?>> <?php echo $data['empresa_nombre'].' - '.$data['sucursal_nombre'].' - '.$data['ciudad_nombre']; ?> </option>
+                                                                <option value="<?php echo $data['sucursal_codigo']; ?>" <?php echo $selSuc; ?>> <?php echo $data['empresa_nombre'].' - '.$data['sucursal_nombre']; ?> </option>
 <?php
         }
     }
@@ -223,7 +266,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var11" name="var11" value="<?php echo $var11; ?>" style="text-transform:uppercase; background-color:rgba(254, 124, 150, 0.2); border:1px solid red; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var11" name="var11" value="<?php echo $var11; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -231,7 +274,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var12" name="var12" value="<?php echo $var12; ?>" style="text-transform:uppercase; background-color:rgba(254, 124, 150, 0.2); border:1px solid red; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var12" name="var12" value="<?php echo $var12; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -249,7 +292,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var21" name="var21" value="<?php echo $var21; ?>" style="text-transform:uppercase; background-color:rgba(216, 216, 216, 0.2); border:1px solid gray; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var21" name="var21" value="<?php echo $var21; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -257,7 +300,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var22" name="var22" value="<?php echo $var22; ?>" style="text-transform:uppercase; background-color:rgba(216, 216, 216, 0.2); border:1px solid gray; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var22" name="var22" value="<?php echo $var22; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -275,7 +318,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var31" name="var31" value="<?php echo $var31; ?>" style="text-transform:uppercase; background-color:rgba(182, 109, 255, 0.2); border:1px solid purple; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var31" name="var31" value="<?php echo $var31; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -283,7 +326,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var32" name="var32" value="<?php echo $var32; ?>" style="text-transform:uppercase; background-color:rgba(182, 109, 255, 0.2); border:1px solid purple; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var32" name="var32" value="<?php echo $var32; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -300,7 +343,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var41" name="var41" value="<?php echo $var41; ?>" style="text-transform:uppercase; background-color:rgba(62, 75, 91, 0.2); border:1px solid black; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var41" name="var41" value="<?php echo $var41; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -308,7 +351,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var42" name="var42" value="<?php echo $var42; ?>" style="text-transform:uppercase; background-color:rgba(62, 75, 91, 0.2); border:1px solid black; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var42" name="var42" value="<?php echo $var42; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -326,7 +369,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var51" name="var51" value="<?php echo $var51; ?>" style="text-transform:uppercase; background-color:rgba(27, 207, 180, 0.2); border:1px solid green; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var51" name="var51" value="<?php echo $var51; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -334,7 +377,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var52" name="var52" value="<?php echo $var52; ?>" style="text-transform:uppercase; background-color:rgba(27, 207, 180, 0.2); border:1px solid green; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var52" name="var52" value="<?php echo $var52; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -352,7 +395,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var61" name="var61" value="<?php echo $var61; ?>" style="text-transform:uppercase; background-color:rgba(25, 138, 227, 0.2); border:1px solid blue; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var61" name="var61" value="<?php echo $var61; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -360,7 +403,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var62" name="var62" value="<?php echo $var62; ?>" style="text-transform:uppercase; background-color:rgba(25, 138, 227, 0.2); border:1px solid blue; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var62" name="var62" value="<?php echo $var62; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -378,7 +421,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var71" name="var71" value="<?php echo $var71; ?>" style="text-transform:uppercase; background-color:rgba(254, 215, 19, 0.2); border:1px solid yellow; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var71" name="var71" value="<?php echo $var71; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="COMPRA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -386,7 +429,7 @@
                                                         <div class="col-sm-12 col-md-4">
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <input type="number" step="any" class="form-control" id="var72" name="var72" value="<?php echo $var72; ?>" style="text-transform:uppercase; background-color:rgba(254, 215, 19, 0.2); border:1px solid yellow; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
+                                                                    <input type="number" step="any" class="form-control" id="var72" name="var72" value="<?php echo $var72; ?>" style="text-transform:uppercase; font-weight:bold;" placeholder="VENTA" required <?php echo $readonly; ?>>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -408,9 +451,10 @@
 
         <?php  include '../incl/footer.php'; ?>
         <script>
-            function selectSucursal(){
+            function reload(){
                 var var03 = document.getElementById("var03").value;
-                location="http://10.168.196.152/sistema_nahuel/pages/cotizaciondetalle_crud.php?var00=CB&var03="+var03;
+                var var06 = document.getElementById("var06").value;
+                location="http://10.168.196.152/sistema_nahuel/pages/cotizaciondetalle_crud.php?var00=CB&var03="+var03+"&var06="+var06;
             }
         </script>
     </body>
